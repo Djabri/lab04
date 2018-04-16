@@ -86,24 +86,24 @@ $ cmake --build _build - Создание двоичной директории 
 ```ShellSession
 $ cat >> CMakeLists.txt <<EOF
 
-add_executable(example1 \${CMAKE_CURRENT_SOURCE_DIR}/examples/example1.cpp) |
-add_executable(example2 \${CMAKE_CURRENT_SOURCE_DIR}/examples/example2.cpp) | - Добавление исполняеиого файла "example1" и "example2"
+add_executable(example1 \${CMAKE_CURRENT_SOURCE_DIR}/examples/example1.cpp) \
+add_executable(example2 \${CMAKE_CURRENT_SOURCE_DIR}/examples/example2.cpp) / - Добавление исполняемого файла example1 и example2
 EOF
 ```
 
 ```ShellSession
 $ cat >> CMakeLists.txt <<EOF
 
-target_link_libraries(example1 print) | 
-target_link_libraries(example2 print) | - Опрделение библиотек для связывания target и зависимых файлов
+target_link_libraries(example1 print) \ 
+target_link_libraries(example2 print) / - Опрделение библиотек для связывания target и зависимых файлов
 EOF
 ```
 
 ```ShellSession
 $ cmake --build _build
-$ cmake --build _build --target print       |
+$ cmake --build _build --target print       \
 $ cmake --build _build --target example1    |  - Сборка данных target файлов ("print" "example1" "example2")
-$ cmake --build _build --target example2    |
+$ cmake --build _build --target example2    /
 ```
 
 ```ShellSession
@@ -123,8 +123,8 @@ $ rm -rf tmp
 
 ```ShellSession
 $ cat CMakeLists.txt
-$ cmake -H. -B_build -DCMAKE_INSTALL_PREFIX=_install  |
-$ cmake --build _build --target install               | - Установка директории по умолчанию
+$ cmake -H. -B_build -DCMAKE_INSTALL_PREFIX=_install  \
+$ cmake --build _build --target install               / - Установка директории по умолчанию
 $ tree _install                                       
 ```
 
