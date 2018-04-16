@@ -54,7 +54,7 @@ $ rm -rf log.txt
 
 ```ShellSession
 $ cat > CMakeLists.txt <<EOF
-cmake_minimum_required(VERSION 3.0) - Задание минимальной требебуемой версии
+cmake_minimum_required(VERSION 2.8) - Задание минимальной требебуемой версии
 project(print)
 EOF
 ```
